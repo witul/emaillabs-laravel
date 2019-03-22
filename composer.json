@@ -21,5 +21,12 @@
         "psr-4": {
             "Dct24\\EmailLabs\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dct24\\EmailLabs\\EmailLabsServiceProvider
+            ]
+        }
     }
 }
