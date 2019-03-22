@@ -15,7 +15,9 @@ After updating composer, add the EmailLabsServiceProvider to the providers array
 > If you use Laravel Debugbar with enabled email collector, make sure you load EmailLabsServiceProvider before Debugbar ServiceProvider.
 
 
+
 In Laravel 5.5 and above, the package will autoregister the service provider. 
+
 
 For Laravel 5.4 or below you must install this service provider to `config/app.php`:
 
