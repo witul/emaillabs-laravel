@@ -6,7 +6,7 @@ use Log;
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 use GuzzleHttp\Client as HttpClient;
-use Beryldev\EmailLabs\Transport\EmailLabsTransport;
+use Dct24\EmailLabs\Transport\EmailLabsTransport;
 
 class EmailLabsServiceProvider extends ServiceProvider
 {
