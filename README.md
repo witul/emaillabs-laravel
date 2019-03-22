@@ -16,10 +16,10 @@ After updating composer, add the EmailLabsServiceProvider to the providers array
 
 
 
-In Laravel 5.5 and above, the package will autoregister the service provider. 
+#### In Laravel 5.5 and above, the package will autoregister the service provider. 
 
 
-For Laravel 5.4 or below you must install this service provider to `config/app.php`:
+#### For Laravel 5.4 or below you must install this service provider to `config/app.php`:
 
 ```
 Dct24\EmailLabs\EmailLabsServiceProvider::class,
