@@ -1,6 +1,6 @@
 <?php
 
-namespace Beryldev\EmailLabs;
+namespace Dct24\EmailLabs;
 
 use Log;
 use Illuminate\Support\Arr;
