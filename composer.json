@@ -1,0 +1,25 @@
+{
+    "name": "dct24/emaillabs-laravel",
+    "description": "Simple package to integrate Laravel email with EmailLabs",
+    "keywords": ["laravel", "emial", "labs", "emiallabs", "driver", "mail"],
+    "homepage": "https://github.com/dct24/emaillabs-laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke",
+            "email": "info@dct24.pl",
+            "homepage": "https://github.com/dct24"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1.3",
+        "laravel/framework": "5.8.*",
+        "guzzlehttp/guzzle": "~5.3|~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Beryldev\\EmailLabs\\": "src/"
+        }
+    }
+}
