@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Beryldev\\EmailLabs\\": "src/"
+            "Dct24\\EmailLabs\\": "src/"
         }
     }
 }
