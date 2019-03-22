@@ -1,8 +1,7 @@
 <?php
 
-namespace Beryldev\EmailLabs\Transport;
+namespace Dct24\EmailLabs\Transport;
 
-use Swift_Encoding;
 use Swift_Mime_SimpleMessage;
 use GuzzleHttp\Post\PostFile;
 use GuzzleHttp\ClientInterface;
@@ -72,10 +71,10 @@ class EmailLabsTransport extends Transport
                 ->getBody(), true);
 
             if ($response['status'] === 'success') {
-                \Log::debug('Message sent. '.$response['message']. ' '
+                \Log::info('Wiadomość wysłana. '.$response['message']. ' '
                     .$this->formatResponseData($response));
             } else {
-                \Log::warning('Message send failure. '.$response['message'].' '
+                \Log::warning('Wiadomość nie wysłana. '.$response['message'].' '
                     .$this->formatResponseData($response));
             }
         } catch (\Exception $e) {
