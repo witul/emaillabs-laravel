@@ -2,9 +2,10 @@
 
 namespace Dct24\EmailLabs\Transport;
 
-use Swift_Mime_SimpleMessage;
 use GuzzleHttp\Post\PostFile;
+use Swift_Mime_SimpleMessage;
 use GuzzleHttp\ClientInterface;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Mail\Transport\Transport;
 
 class EmailLabsTransport extends Transport
@@ -71,14 +72,14 @@ class EmailLabsTransport extends Transport
                 ->getBody(), true);
 
             if ($response['status'] === 'success') {
-                \Log::info('Wiadomość wysłana. '.$response['message']. ' '
+                Log::info('Wiadomość wysłana. '.$response['message']. ' '
                     .$this->formatResponseData($response));
             } else {
-                \Log::warning('Wiadomość nie wysłana. '.$response['message'].' '
+                Log::warning('Wiadomość nie wysłana. '.$response['message'].' '
                     .$this->formatResponseData($response));
             }
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
         }
     }
 
