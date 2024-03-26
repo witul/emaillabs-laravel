@@ -7,7 +7,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 use GuzzleHttp\Client as HttpClient;
 use Dct24\EmailLabs\Transport\EmailLabsTransport;
-
+use Illuminate\Support\Facades\Mail;
 class EmailLabsServiceProvider extends ServiceProvider
 {
     /**
@@ -43,10 +43,9 @@ class EmailLabsServiceProvider extends ServiceProvider
      **/
     protected function registerEmailLabsTransport($manager)
     {
-        $manager->extend('emaillabs', function(){
+        Mail::extend('emaillabs', function(){
             $config = $this->app['config']->get('emaillabs', []);
             $client = $this->getHttpClient($config);
-
             return new EmailLabsTransport($client, $config);
         });
     }
@@ -54,7 +53,7 @@ class EmailLabsServiceProvider extends ServiceProvider
     /**
      * Prepare configured http client
      *
-     * @return GuzzleHttp\Client
+     * @return HttpClient
      * @author Sebastian
      **/
     protected function getHttpClient($config)
