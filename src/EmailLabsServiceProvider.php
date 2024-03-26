@@ -21,8 +21,8 @@ class EmailLabsServiceProvider extends ServiceProvider
             __DIR__.'/../config/emaillabs.php' => config_path('emaillabs.php'),
             ], 'config');
 
-        $transportManager = $this->app['swift.transport'];
-        $this->registerEmailLabsTransport($transportManager);
+        //$transportManager = $this->app['swift.transport'];
+        $this->registerEmailLabsTransport();
     }
 
     /**
@@ -41,7 +41,7 @@ class EmailLabsServiceProvider extends ServiceProvider
      * @return void
      * @author Sebastian
      **/
-    protected function registerEmailLabsTransport($manager)
+    protected function registerEmailLabsTransport()
     {
         Mail::extend('emaillabs', function(){
             $config = $this->app['config']->get('emaillabs', []);
